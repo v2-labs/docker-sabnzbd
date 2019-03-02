@@ -32,7 +32,7 @@ RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptogra
     && mkdir -p /mnt/downloads
 
 # Add SABnzbd init script.
-ADD entrypoint.sh /home/sabnzbd/entrypoint.sh
+COPY entrypoint.sh /home/sabnzbd/entrypoint.sh
 RUN chmod 755 /home/sabnzbd/entrypoint.sh
 
 VOLUME ["/mnt/data", "/mnt/downloads"]
@@ -42,4 +42,3 @@ EXPOSE 8080
 WORKDIR /home/sabnzbd
 
 CMD ["./entrypoint.sh"]
-
