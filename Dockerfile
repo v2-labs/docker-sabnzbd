@@ -10,7 +10,7 @@ RUN addgroup -S -g 666 sabnzbd \
 
 # This is SABnzbd basic install with requirements
 RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptography \
-                       py-enum34 py-cffi py-openssl py-cheetah git unzip unrar p7zip \
+                       py-enum34 py-cffi py-openssl py-cheetah shadow unzip unrar p7zip \
                        build-base automake autoconf python-dev \
     && cd /tmp \
     && wget -O- https://github.com/Parchive/par2cmdline/archive/v$PAR2.tar.gz | tar -zx \
