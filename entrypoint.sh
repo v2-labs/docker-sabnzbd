@@ -9,11 +9,11 @@ USER="sabnzbd"
 echo "SABnzbd settings"
 echo "=================="
 echo
-echo "  User:       ${USER}"
-echo "  UID:        ${SABNZBD_UID:=666}"
-echo "  GID:        ${SABNZBD_GID:=666}"
+echo "  User:    ${USER}"
+echo "  UID:     ${SABNZBD_UID:=666}"
+echo "  GID:     ${SABNZBD_GID:=666}"
 echo
-echo "  Config:     ${CONFIG:=/mnt/data/config.ini}"
+echo "  Config:  ${CONFIG:=/mnt/data/config.ini}"
 echo
 
 #
