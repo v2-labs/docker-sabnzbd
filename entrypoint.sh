@@ -32,7 +32,7 @@ echo "[DONE]"
 printf "Set permissions... "
 touch ${CONFIG}
 chown -R ${USER}: /home/sabnzbd /opt/sabnzbd \
-                  /mnt/data /mnt/downloads
+                  /mnt/data /mnt/data/watch /mnt/downloads
 echo "[DONE]"
 
 #
