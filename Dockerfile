@@ -29,13 +29,14 @@ RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptogra
     && wget -O- https://github.com/sabnzbd/sabnzbd/archive/$VERSION.tar.gz | tar -zx \
     && mv sabnzbd-$VERSION sabnzbd \
     && mkdir -p /mnt/data \
+    && mkdir -p /mnt/data/watch \
     && mkdir -p /mnt/downloads
 
 # Add SABnzbd init script.
 COPY entrypoint.sh /home/sabnzbd/entrypoint.sh
 RUN chmod 755 /home/sabnzbd/entrypoint.sh
 
-VOLUME ["/mnt/data", "/mnt/downloads"]
+VOLUME ["/mnt/data", "/mnt/data/watch", "/mnt/downloads"]
 
 EXPOSE 8080
 

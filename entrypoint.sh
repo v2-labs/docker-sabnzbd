@@ -9,11 +9,11 @@ USER="sabnzbd"
 echo "SABnzbd settings"
 echo "=================="
 echo
-echo "  User:       ${USER}"
-echo "  UID:        ${SABNZBD_UID:=666}"
-echo "  GID:        ${SABNZBD_GID:=666}"
+echo "  User:    ${USER}"
+echo "  UID:     ${SABNZBD_UID:=666}"
+echo "  GID:     ${SABNZBD_GID:=666}"
 echo
-echo "  Config:     ${CONFIG:=/mnt/data/config.ini}"
+echo "  Config:  ${CONFIG:=/mnt/data/config.ini}"
 echo
 
 #
@@ -32,7 +32,7 @@ echo "[DONE]"
 printf "Set permissions... "
 touch ${CONFIG}
 chown -R ${USER}: /home/sabnzbd /opt/sabnzbd \
-                  /mnt/data /mnt/downloads
+                  /mnt/data /mnt/data/watch /mnt/downloads
 echo "[DONE]"
 
 #
