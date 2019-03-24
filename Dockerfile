@@ -9,7 +9,7 @@ RUN addgroup -S -g 666 sabnzbd \
     && adduser -S -u 666 -G sabnzbd -h /home/sabnzbd -s /bin/sh sabnzbd
 
 # This is SABnzbd basic install with requirements
-RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptography \
+RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptography libgomp \
                        py-enum34 py-cffi py-openssl py-cheetah shadow unzip unrar p7zip \
                        build-base automake autoconf python-dev \
     && cd /tmp \
@@ -18,7 +18,7 @@ RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptogra
     && aclocal \
     && automake --add-missing \
     && autoconf \
-    && ./configure \
+    && ./configure --prefix=/usr \
     && make \
     && make install \
     && cd .. \
