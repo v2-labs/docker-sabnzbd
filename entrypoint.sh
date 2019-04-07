@@ -31,8 +31,10 @@ echo "[DONE]"
 
 printf "Set permissions... "
 touch ${CONFIG}
-chown -R ${USER}: /home/sabnzbd /opt/sabnzbd \
-                  /mnt/data /mnt/data/watch /mnt/downloads
+chown -R ${USER}:${USER} \
+      /home/sabnzbd /opt/sabnzbd \
+      /mnt/data /mnt/data/watch /mnt/downloads \
+      > /dev/null 2>&1
 echo "[DONE]"
 
 #
