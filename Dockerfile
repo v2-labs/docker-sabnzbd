@@ -23,7 +23,7 @@ RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptogra
     && make install \
     && cd .. \
     && rm -rf par2cmdline-$PAR2 \
-    && pip --no-cache-dir install --upgrade sabyenc \
+    && pip --no-cache-dir install --upgrade sabyenc requests \
     && apk del build-base automake autoconf python-dev \
     && cd /opt \
     && wget -O- https://github.com/sabnzbd/sabnzbd/archive/$VERSION.tar.gz | tar -zx \
