@@ -1,8 +1,8 @@
-FROM alpine:3.9
+FROM alpine:3.12.0
 MAINTAINER Juvenal A. Silva Jr. <juvenal.silva.jr@gmail.com>
 
-ENV VERSION 2.3.7
-ENV PAR2 0.8.0
+ENV VERSION 2.3.9
+ENV PAR2 0.8.1
 
 # Create user and group for SABnzbd.
 RUN addgroup -S -g 666 sabnzbd \
