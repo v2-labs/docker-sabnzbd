@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM alpine:3.9
 MAINTAINER Juvenal A. Silva Jr. <juvenal.silva.jr@gmail.com>
 
 ENV VERSION 2.3.9
