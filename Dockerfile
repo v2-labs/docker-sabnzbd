@@ -36,7 +36,7 @@ RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptogra
 COPY entrypoint.sh /home/sabnzbd/entrypoint.sh
 RUN chmod 755 /home/sabnzbd/entrypoint.sh
 
-VOLUME ["/mnt/data", "/mnt/data/watch", "/mnt/downloads"]
+VOLUME ["/etc/sabnzbd", "/mnt/sabnzbd/watch", "/mnt/sabnzbd/downloads"]
 
 EXPOSE 8080
 
