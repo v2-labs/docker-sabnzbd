@@ -28,9 +28,9 @@ RUN apk add --no-cache ca-certificates openssl python py-pip py-six py-cryptogra
     && cd /opt \
     && wget -O- https://github.com/sabnzbd/sabnzbd/archive/$VERSION.tar.gz | tar -zx \
     && mv sabnzbd-$VERSION sabnzbd \
-    && mkdir -p /mnt/data \
-    && mkdir -p /mnt/data/watch \
-    && mkdir -p /mnt/downloads
+    && mkdir -p /etc/sabnzbd \
+    && mkdir -p /mnt/sabnzbd/watch \
+    && mkdir -p /mnt/sabnzbd/downloads
 
 # Add SABnzbd init script.
 COPY entrypoint.sh /home/sabnzbd/entrypoint.sh
