@@ -12,15 +12,16 @@ echo
 echo "  User:    ${USER}"
 echo "  UID:     ${SABNZBD_UID:=666}"
 echo "  GID:     ${SABNZBD_GID:=666}"
+echo "  CHMOD:   ${CHMOD:=false}"
 echo
-echo "  Config:  ${CONFIG:=/mnt/data/config.ini}"
+echo "  Config:  ${CONFIG:=/etc/sabnzbd/config.ini}"
 echo
 
 #
 # Change UID / GID of SABnzbd user.
 #
 
-printf "Updating UID / GID... "
+printf "Updating UID / GID if needed... "
 [[ $(id -u ${USER}) == ${SABNZBD_UID} ]] || usermod  -o -u ${SABNZBD_UID} ${USER}
 [[ $(id -g ${USER}) == ${SABNZBD_GID} ]] || groupmod -o -g ${SABNZBD_GID} ${USER}
 echo "[DONE]"
@@ -32,9 +33,12 @@ echo "[DONE]"
 printf "Set permissions... "
 touch ${CONFIG}
 chown -R ${USER}:${USER} \
-      /home/sabnzbd /opt/sabnzbd \
-      /mnt/data /mnt/data/watch /mnt/downloads \
+      /home/sabnzbd /opt/sabnzbd /etc/sabnzbd \
       > /dev/null 2>&1
+[[ "${CHMOD}" == "false" ]] || \
+    chown -R ${USER}:${USER} \
+          /mnt/sabnzbd/watch /mnt/sabnzbd/downloads \
+          > /dev/null 2>&1
 echo "[DONE]"
 
 #
